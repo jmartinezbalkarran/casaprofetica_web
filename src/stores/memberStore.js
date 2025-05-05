@@ -9,7 +9,7 @@ export const useMemberStore = defineStore('member',()=>{
 
     fetch('http://localhost:30002/members')
     .then((res)=> res.json())
-    .then((res)=>members.value  = res.data)
+    .then((res)=>members.value = res.data)
 
     fetch('http://localhost:30002/groups')
     .then((res)=> res.json())
@@ -88,6 +88,6 @@ export const useMemberStore = defineStore('member',()=>{
       }) 
     }
     
-return{members,groups, loadData,  getMember, getGroupName, getMemberIndex, create, update, deleteMember}
+return{members,groups, getMember, getGroupName, getMemberIndex, create, update, deleteMember}
 })     
 
