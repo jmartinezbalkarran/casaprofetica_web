@@ -19,17 +19,27 @@ export const useMemberStore = defineStore('member',()=>{
       const member = members.value.find(member => member.id == id)
       return member
     }
-
+    const getGroupName = (id)=>{
+      const group = groups.value.find(group => group.id == id)
+      return group.name
+    }
     const getMemberIndex = (id) => {
      const index = members.value.findIndex(member => member.id == id)
      return index
     }
 
-
+    const newId = () =>{
+      const member = members.value
+      const lastMember = member[member.length -1]
+      const lastId = lastMember.id+1 
+      return lastId
+    }
 
     const create = (newMember) => {
-      members.value.push(newMember)
-      
+    
+      const member = {...newMember}
+      member.id = (members.value.length === 0) ? member.id = 0 : member.id = newId()
+      members.value.push(member)
       newMember.group_id = newMember.group_id.toString()
    
       fetch('http://localhost:30002/members',{
@@ -78,6 +88,6 @@ export const useMemberStore = defineStore('member',()=>{
       }) 
     }
     
-return{members,groups, getMember, getMemberIndex, create, update, deleteMember}
+return{members,groups, loadData,  getMember, getGroupName, getMemberIndex, create, update, deleteMember}
 })     
 

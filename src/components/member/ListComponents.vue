@@ -30,7 +30,7 @@
             <td class="px-6 py-4 whitespace-nowrap">{{member.lastname}}</td>
             <td class="px-6 py-4 whitespace-nowrap">{{member.card}}</td>
             <td class="px-6 py-4 whitespace-nowrap">
-            <router-link :to="`/members/${member.id}/show`" class="bg-green-700 hover:bg-green-400 text-white h-10 font-bold py-2 px-4 rounded mr-2">Ver</router-link>
+            <router-link :to="`/members/${member.id}/show`"  class="bg-green-700 hover:bg-green-400 text-white h-10 font-bold py-2 px-4 rounded mr-2">Ver</router-link>
             <router-link :to="`/members/${member.id}/edit`" class="bg-blue-700 hover:bg-blue-400 text-white h-10 font-bold py-2 px-4 rounded mr-2">Editar</router-link>
             <router-link  to="" @click="openModal(member.id)" class="bg-red-700 hover:bg-red-400 text-white h-10 font-bold py-2 px-4 rounded mr-2">Eliminar</router-link>
             </td>
@@ -73,7 +73,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import {ref } from 'vue'
 import {useMemberStore} from '../../stores/memberStore.js'
 const store = useMemberStore()
 

@@ -10,7 +10,7 @@
         <p class="mt-2 text-gray-500">Nombre: {{ member.name }}</p>
         <p class="mt-2 text-gray-500">Apellido: {{ member.lastname }}</p>
         <p class="mt-2 text-gray-500">Cédula: {{ member.card }}</p>
-        <p class="mt-2 text-gray-500">Grupo: {{ member.group_id }}</p>
+        <p class="mt-2 text-gray-500">Grupo: {{store.getGroupName( member.group_id) }}</p>
         <div class="mt-4"></div>
       </div>
     </div>

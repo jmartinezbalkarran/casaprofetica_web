@@ -53,55 +53,10 @@
 
 
   const handleSubmit = () => {
-   store.create(member) 
+   store.create(member)
    router.push('/members')
   }
   
-
-
-
-  /* import { ref, onMounted } from 'vue';
-  import { useRoute, useRouter } from 'vue-router';
-  
-  const route = useRoute()
-  const router = useRouter()
-  const groups = ref({
-    id:'',
-    name:''
-  })
-  const member = ref({
-    name: '',
-    lastname: '',
-    card: '',
-    group_id: ''
-  })
-
-  onMounted(()=>{
-    fetch('http://localhost:30002/groups')
-    .then((res)=> res.json())
-    .then((res)=> groups.value = res.data)
-    
-  })
-  
-  
-  const handleSubmit = () => {
-    member.value.group_id = member.value.group_id.toString()
-   
-    fetch('http://localhost:30002/members',{
-        method:'POST',
-
-        headers:{
-            'Content-Type': 'application/json'
-        },
-
-        body: JSON.stringify(member.value)
-    })
-    
-    router.push('/members')
-   
-  };
-  
-   */
   </script>
 
   

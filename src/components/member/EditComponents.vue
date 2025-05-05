@@ -15,7 +15,8 @@
             <label for="card" class="block text-gray-700 font-semibold mb-2">Cédula</label>
             <input type="text" id="card" v-model="member.card" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
           </div>
-          <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Guardar cambios</button>
+          <router-link to="/members" class="w-50  bg-blue-500 text-white py-3 px-2 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 ml-4"> Cancelar </router-link>
+          <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 ml-40">Guardar</button>
         </form>
       </div>
     </div>
