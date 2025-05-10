@@ -15,6 +15,13 @@ export const useMemberStore = defineStore('member',()=>{
     .then((res)=> res.json())
     .then((res)=> groups.value = res.data)
 
+    const load = ()=>{
+      setTimeout(() => {
+        fetch('http://localhost:30002/members')
+        .then((res)=> res.json())
+        .then((res)=>members.value = res.data)
+      }, 1000);
+    }
     const getMember = (id) => {
       const member = members.value.find(member => member.id == id)
       return member
@@ -28,17 +35,10 @@ export const useMemberStore = defineStore('member',()=>{
      return index
     }
 
-    const newId = () =>{
-      const member = members.value
-      const lastMember = member[member.length -1]
-      const lastId = lastMember.id+1 
-      return lastId
-    }
-
+  
     const create = (newMember) => {
     
       const member = {...newMember}
-      member.id = (members.value.length === 0) ? member.id = 0 : member.id = newId()
       members.value.push(member)
       newMember.group_id = newMember.group_id.toString()
    
@@ -51,7 +51,7 @@ export const useMemberStore = defineStore('member',()=>{
 
         body: JSON.stringify(newMember)
       })
-    
+      load()
     }
 
     
@@ -72,7 +72,8 @@ export const useMemberStore = defineStore('member',()=>{
         },
 
         body: JSON.stringify(upMember)
-      }) 
+      })
+      load() 
     }
 
     const deleteMember = (id) => {
@@ -86,6 +87,7 @@ export const useMemberStore = defineStore('member',()=>{
             'Content-Type': 'application/json'
         }
       }) 
+      load()
     }
     
 return{members,groups, getMember, getGroupName, getMemberIndex, create, update, deleteMember}
