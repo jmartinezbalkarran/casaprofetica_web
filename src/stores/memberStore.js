@@ -28,7 +28,7 @@ export const useMemberStore = defineStore('member',()=>{
     }
     const getGroupName = (id)=>{
       const group = groups.value.find(group => group.id == id)
-      return group.name
+      if (group) return group.name
     }
     const getMemberIndex = (id) => {
      const index = members.value.findIndex(member => member.id == id)

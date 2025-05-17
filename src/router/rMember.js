@@ -8,7 +8,7 @@ import Create from'../components/member/CreateComponents.vue'
 
 
 
-const routes = [
+const routerMember = [
   { path: '/members', component: lists },
   { path: '/members/create', component: Create },
   { path: '/members/:id/show', component: Show},
@@ -16,9 +16,4 @@ const routes = [
  
 ];
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
-
-export default router;
+export default routerMember;

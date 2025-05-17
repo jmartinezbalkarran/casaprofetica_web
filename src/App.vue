@@ -13,10 +13,10 @@
             <router-link to="/members" class=" text-gray-300 font-bold hover:text-white">Miembro</router-link>
           </li>
           <li>
-            <router-link to="#" class="text-gray-300 font-bold hover:text-white">Grupo</router-link>
+            <router-link to="/groups" class="text-gray-300 font-bold hover:text-white">Grupo</router-link>
           </li>
           <li>
-            <router-link to="#" class="text-gray-300 font-bold hover:text-white">Zona</router-link>
+            <router-link to="/zones" class="text-gray-300 font-bold hover:text-white">Zona</router-link>
           </li>
         </ul>
       </div>
